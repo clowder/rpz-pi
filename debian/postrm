@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if [ "$1" = purge ]; then
+    rm -f /var/lib/unbound/blocklist.rpz
+fi
+if [ "$1" = remove ] || [ "$1" = purge ]; then
+    deb-systemd-invoke restart unbound.service || true
+fi
+
+#DEBHELPER#

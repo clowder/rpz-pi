@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+if [ "$1" = configure ]; then
+    # Debian's unbound creates root.key on first service start; make sure it exists
+    # so the config check below can't fail on install ordering.
+    /usr/libexec/unbound-helper root_trust_anchor_update || true
+    unbound-checkconf
+    deb-systemd-invoke restart unbound.service || true
+
+    systemctl reload NetworkManager.service 2>/dev/null || true
+    iw dev wlan0 set power_save off 2>/dev/null || true
+fi
+
+#DEBHELPER#

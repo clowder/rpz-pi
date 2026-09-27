@@ -1,0 +1,3 @@
+etc/rpz-pi.conf etc/unbound/unbound.conf.d/
+etc/allowlist.rpz etc/unbound/
+etc/rpz-pi-wifi-powersave-off.conf etc/NetworkManager/conf.d/

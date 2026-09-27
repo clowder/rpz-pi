@@ -1,0 +1,13 @@
+Source: rpz-pi
+Section: net
+Maintainer: Chris <clowder@hey.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+
+Package: rpz-pi
+Architecture: all
+Depends: ${misc:Depends}, unbound, dns-root-data, ca-certificates
+Description: Lightweight ad-blocking DNS: Unbound + Hagezi RPZ blocklist
+ Configures Unbound as the DNS resolver for your local network. It blocks
+ domains on the Hagezi Light RPZ list, with a local allowlist for
+ exceptions.

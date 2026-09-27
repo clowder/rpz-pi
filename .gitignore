@@ -1,0 +1,5 @@
+debian/.debhelper/
+debian/rpz-pi/
+debian/debhelper-build-stamp
+debian/files
+debian/*.substvars
